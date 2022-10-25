@@ -15,6 +15,7 @@ const Home = () => {
       userInput,
       ...todoList
     ])
+    setUserInput(' ')
   }
   const handleDelete =(todo) => {
     const updatedArr = todoList.filter(todoItem => todoList.indexOf(todoItem) != todoList.indexOf(todo))
@@ -24,18 +25,18 @@ const Home = () => {
     <div>
       <h1>Todo</h1>
       <form>
-        <input type="text" onChange={handleChange}/>
+        <input type="text" onChange={handleChange} />
         <button onClick={handleSubmit} >Add</button>
       </form>
       <ul>
         {
           todoList.length >= 1 ? todoList.map ((todo,idx) => {
-            return <li key={idx}>{todo}<button onClick={(e) => {
+            return <li key={idx}>{todo}
+            <button onClick={(e) => {
               e.preventDefault()
               handleDelete(todo)
             }}>Delete</button></li>
           })
-          :'Enter a todo Item'
         }
       </ul>
     </div>
