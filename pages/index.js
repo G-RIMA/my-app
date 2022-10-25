@@ -5,6 +5,7 @@ const Home = () => {
   return (
     <div>
       <Head>
+        <link href="/dist/output.css" rel="stylesheet"/>
         <title>To Do App</title>
       </Head>
 
@@ -12,11 +13,19 @@ const Home = () => {
         <h1>To Do</h1>
         
         <div>
-         
+          <form>
+            <div>
+              <input type='text' />
+              <button type='button'></button>
+            </div>
+          </form>
+          <ul>
+            <li></li>
+            </ul>         
         </div>
       </main>
 
-      <footer className={styles.footer}>
+      <footer>
         
       </footer>
     </div>
