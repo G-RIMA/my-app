@@ -25,16 +25,15 @@ const Home = () => {
       <h1>Todo</h1>
       <form>
         <input type="text" onChange={handleChange}/>
-        <button onClick={handleSubmit}>Add</button>
-        <button onClick={(e) => {
-          e.preventDefault()
-          handleDelete(todo)
-        }}>Delete</button>
+        <button onClick={handleSubmit} >Add</button>
       </form>
       <ul>
         {
           todoList.length >= 1 ? todoList.map ((todo,idx) => {
-            return <li key={idx}>{todo}</li>
+            return <li key={idx}>{todo}<button onClick={(e) => {
+              e.preventDefault()
+              handleDelete(todo)
+            }}>Delete</button></li>
           })
           :'Enter a todo Item'
         }
