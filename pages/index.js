@@ -16,12 +16,20 @@ const Home = () => {
       ...todoList
     ])
   }
+  const handleDelete =(todo) => {
+    const updatedArr = todoList.filter(todoItem => todoList.indexOf(todoItem) != todoList.indexOf(todo))
+    setTodoList(updatedArr)
+  }
   return (
     <div>
       <h1>Todo</h1>
       <form>
         <input type="text" onChange={handleChange}/>
         <button onClick={handleSubmit}>Add</button>
+        <button onClick={(e) => {
+          e.preventDefault()
+          handleDelete(todo)
+        }}>Delete</button>
       </form>
       <ul>
         {
